@@ -1,0 +1,202 @@
+/* FONTS */
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v15-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v15-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v15-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* Variables */
+:root {
+  --header-bg: #f0f5fb;
+  --body-bg: #e5e5e5;
+  --black: #000;
+  --pink: #f87848;
+  --green: #46cb72;
+}
+
+/*Main Styles*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 19.5px;
+  font-weight: 400;
+  background-color: var(--body-bg);
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+*/
+.container {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-header {
+  background-color: var(--header-bg);
+}
+.site-header__container {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.site-header__item:not(:last-child) {
+  margin-right: 40px;
+}
+.site-header__link {
+  text-decoration: none;
+  color: var(--black);
+}
+.site-logo__img {
+  display: block;
+  margin-bottom: 20px;
+}
+.time {
+  display: flex;
+  align-items: center;
+}
+.time::before {
+  display: block;
+  content: "";
+  margin-right: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--green);
+}
+.call {
+  display: flex;
+  align-items: center;
+}
+.call::before {
+  width: 49px;
+  height: 49px;
+  content: "";
+  margin-right: 16px;
+  background-image: url(../images/call.svg);
+  background-position: center 5px;
+}
+/* HEADER-SECTION */
+.header-section {
+  padding-top: 105px;
+  margin-bottom: 140px;
+  background-color: var(--header-bg);
+  text-align: center;
+  position: relative;
+}
+.header-section::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(../images/food-left.svg);
+  width: 397px;
+  height: 535px;
+}
+.header-section::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -60px;
+  background-image: url(../images/food-right.svg);
+  width: 228px;
+  height: 653px;
+}
+.header-section__container {
+  position: relative;
+}
+.header-section__container::after {
+  display: block;
+  content: "";
+  background-image: url(../images/pizza.svg);
+  width: 852px;
+  height: 625px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 155px;
+  left: 270px;
+}
+.header-section__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+}
+.header-section__text {
+  margin: 0;
+  padding-bottom: 508px;
+  max-width: 621px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 140%;
+}
+.header-section__food--description {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 248px;
+}
+.header-section__food--description::before {
+  content: "";
+  background-image: url(../images/pizza-line.svg);
+  width: 142px;
+  height: 42px;
+  position: absolute;
+  right: calc(100% + 30px);
+  top: 28px;
+}
+.header-section__food--description span {
+  font-weight: bold;
+  color: var(--pink);
+}
