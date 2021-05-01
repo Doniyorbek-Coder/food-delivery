@@ -24,6 +24,8 @@
   --black: #000;
   --pink: #f87848;
   --green: #46cb72;
+  --white: #fff;
+  --text: #151515;
 }
 
 /*Main Styles*/
@@ -43,7 +45,7 @@ body {
   font-size: 16px;
   line-height: 19.5px;
   font-weight: 400;
-  background-color: var(--body-bg);
+  background-color: var(--white);
   color: #000;
 }
 
@@ -93,6 +95,10 @@ img {
 .site-header__link {
   text-decoration: none;
   color: var(--black);
+  transition: all 0.3s ease-in-out;
+}
+.site-header__link:hover {
+  text-decoration: underline;
 }
 .site-logo__img {
   display: block;
@@ -114,6 +120,10 @@ img {
 .call {
   display: flex;
   align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
 }
 .call::before {
   width: 49px;
@@ -126,7 +136,7 @@ img {
 /* HEADER-SECTION */
 .header-section {
   padding-top: 105px;
-  margin-bottom: 140px;
+  margin-bottom: 160px;
   background-color: var(--header-bg);
   text-align: center;
   position: relative;
@@ -199,4 +209,367 @@ img {
 .header-section__food--description span {
   font-weight: bold;
   color: var(--pink);
+}
+
+/* MAIN */
+.popular-dishes {
+  position: relative;
+}
+.popular-dishes::before {
+  content: "";
+  background-image: url(../images/p-dishes-left.svg);
+  width: 137px;
+  height: 147px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+.popular-dishes::after {
+  content: "";
+  background-image: url(../images/p-dishes-right.svg);
+  width: 130px;
+  height: 336px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.popular-dishes__container {
+  position: relative;
+}
+.popular-dishes__basket {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: -75px;
+}
+.popular-dishes__basket--description {
+  margin-right: 20px;
+  position: relative;
+  background-color: black;
+  border-radius: 5px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.popular-dishes__basket--description::after {
+  content: "";
+  margin-top: -5px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+  position: absolute;
+  right: -23px;
+}
+.popular-dishes__title {
+  margin: 0;
+  margin-bottom: 49px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+}
+.popular-dishes__list {
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+.popular-dishes__item {
+  padding: 17px 47px;
+  background: linear-gradient(0deg, #eceef6, #eceef6), #59aaf1;
+  border-radius: 45px;
+}
+.popular-dishes__item:not(:last-child) {
+  margin-right: 31px;
+}
+.popular-dishes__item--active,
+.popular-dishes__item:hover {
+  background: #59aaf1;
+}
+.popular-dishes__link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text);
+}
+.popular-dishes__link--active,
+.popular-dishes__item:hover .popular-dishes__link {
+  color: var(--white);
+}
+
+.popular-dishes__panel {
+  margin: 0;
+  margin-bottom: 85px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular-dishes__object {
+  max-width: 260px;
+  border: 2px solid #eceef6;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 44px;
+  position: relative;
+}
+.popular-dishes__object:not(:nth-child(4n)) {
+  margin-right: 40px;
+}
+.popular-dishes__object-link {
+  margin-top: 11px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.popular-dishes__img {
+  display: block;
+}
+.about-pizza {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-pizza__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+.about-pizza__size {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  color: #000000;
+}
+.pizza-description {
+  margin: 0;
+  margin-bottom: 19px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  color: #000000;
+}
+.pizza-price {
+  margin: 0;
+  margin-bottom: 18px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+  color: #121146;
+}
+
+.basket-button {
+  cursor: pointer;
+  background-image: url(../images/purple-basket.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 2px solid #eceef6;
+  background-color: #fff;
+  position: absolute;
+  bottom: -16px;
+  left: 113px;
+  z-index: 100;
+}
+.basket-button--active,
+.basket-button:hover {
+  transition: all 0.3s ease-in-out;
+  background-image: url(../images/white-basket.svg);
+  background-color: #fe5626;
+  box-shadow: 0px 4px 8px rgba(205, 71, 41, 0.26);
+  border: 2px solid #fe5626;
+}
+
+.popular-dishes__object::after {
+  position: absolute;
+  bottom: -26px;
+  left: 105px;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  content: "";
+  border-radius: 0 0 25px 0;
+  border-right: 2px solid #eceef7;
+  border-bottom: 2px solid #eceef7;
+  transform: rotate(45deg);
+}
+
+.popular-dishes__reload {
+  margin-bottom: 103px;
+  display: flex;
+  justify-content: center;
+}
+
+.reload-button {
+  background-image: url(../images/reload.svg);
+  width: 64px;
+  height: 64px;
+  padding: 0px;
+  background-position: -6px -2px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+}
+.reload-button:hover {
+  transform: rotate(360deg);
+}
+.instagram-section {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 127px;
+  width: 1440px;
+  height: 260px;
+  background-image: url(../images/carousel-img.svg);
+  display: flex;
+  align-items: center;
+}
+
+.instagram-section__container {
+  display: flex;
+  justify-content: center;
+}
+.instagram-section__item {
+  padding: 75px;
+  background: linear-gradient(45.04deg, #fd9924 -51.05%, #f65b16 134.89%);
+  box-shadow: 0px 70px 90px rgba(253, 55, 36, 0.2),
+    0px 35px 50px rgba(253, 55, 36, 0.2), 0px 20px 25px rgba(253, 55, 36, 0.2);
+  border-radius: 15px;
+}
+.instagram-section__link {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.instagram-section__link span {
+  font-weight: bold;
+}
+
+.form-section {
+  padding-top: 82px;
+  padding-bottom: 246px;
+  background: #f0f5fb;
+  position: relative;
+}
+.form-section::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  background-image: url(../images/footer-left.svg);
+  width: 401px;
+  height: 528px;
+}
+.form-section::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url(../images/footer-right.svg);
+  width: 309px;
+  height: 450px;
+}
+.form-section__form::after {
+  position: absolute;
+  bottom: -70px;
+  display: block;
+  content: "";
+  background-image: url(../images/car.png);
+  width: 634px;
+  height: 264px;
+}
+.form-section__form {
+  display: flex;
+  justify-content: center;
+}
+.form-section__input {
+  margin-right: 37px;
+}
+.form-section__title {
+  max-width: 500px;
+  margin: 0;
+  margin-bottom: 42px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 150%;
+  color: #000000;
+  text-align: center;
+}
+
+.form-section__input {
+  padding: 20px 30px;
+  background: #ffffff;
+  border: 2px solid #eceef7;
+  box-sizing: border-box;
+  border-radius: 57px;
+  outline: none;
+}
+
+.form-section__button {
+  display: flex;
+  align-items: center;
+  padding: 17px 58px;
+  background: linear-gradient(180deg, #fe5626 0%, #f23f0e 100%), #59aaf1;
+  box-shadow: 0px 4px 8px rgba(205, 169, 41, 0.26);
+  border-radius: 59px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 140%;
+  color: #ffffff;
+  border: none;
+}
+
+.form-section__button::after {
+  margin-left: 31px;
+  content: "";
+  background-image: url(../images/right-arrow.svg);
+  width: 36px;
+  height: 12px;
+}
+
+/* FOOTER */
+
+.site-footer__list {
+  margin: 0;
+  padding: 32px 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer__item {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.site-footer__item b {
+  font-weight: bold;
 }
